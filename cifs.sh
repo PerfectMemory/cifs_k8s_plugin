@@ -35,11 +35,11 @@ usage() {
 }
 
 err() {
-	echo -e $* 1>&2
+	echo -e "$@" 1>&2
 }
 
 log() {
-	echo -e $* >&1
+	echo -e "$@" >&1
 }
 
 ismounted() {
@@ -121,17 +121,17 @@ shift
 
 case "$op" in
         attach)
-                attach $*
+                attach "$@"
                 ;;
         detach)
-                detach $*
+                detach "$@"
                 ;;
         mount)
-                domount $*
+                domount "$@"
                 ;;
 	unmount)
-		unmount $*
-		;;
+                unmount "$@"
+                ;;
 	*)
 		usage
 esac
